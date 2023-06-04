@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="counter_image.png" />
+    <title>counter</title>
+    <style>
+      * {
+        margin: 0px;
+        font-family: Kanit;
+      }
+
+      body {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        height: 725px;
+        width: 100%;
+        background-color: rgba(22, 22, 24, 255);
+        color: white;
+      }
+
+      #Box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+        width: 500px;
+        background-color: rgba(27, 27, 30, 255);
+        border-radius: 15px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        margin-top: 60px;
+      }
+
+      #Box:hover {
+        background-color: rgba(35, 35, 38, 255);
+      }
+
+      #Heading {
+        margin-top: 10px;
+      }
+
+      #Counter {
+        margin-top: 100px;
+      }
+
+      #greetings {
+        margin-top: 35px;
+      }
+
+      button {
+        margin-top: 120px;
+        width: 100px;
+        height: 70px;
+        border-radius: 10px;
+        font-size: 40px;
+      }
+
+      #Button-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #Increment-btn {
+        background-color: rgb(51, 134, 51);
+        border: none;
+        color: white;
+      }
+      #Decrement-btn {
+        background-color: rgb(126, 45, 45);
+        border: none;
+        color: white;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="greetings">none</h1>
+    <div id="Box">
+      <h1 id="Heading">Counter</h1>
+      <h1 id="Counter">0</h1>
+      <div id="Button-div">
+        <button id="Increment-btn" onclick="increment()">+</button>
+        <button id="Decrement-btn" onclick="decrement()">-</button>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+      let name = " User";
+      let greetings = "Welcome! ";
+      let myGreetings = greetings + name + "👋";
+
+      let welcomeMessage = document.getElementById("greetings");
+
+      welcomeMessage.innerText = myGreetings;
+
+      console.log(myGreetings);
+
+      function increment() {
+        count = count + 1;
+        document.getElementById("Counter").innerText = count;
+      }
+      function decrement() {
+        count = count - 1;
+        document.getElementById("Counter").innerText = count;
+      }
+    </script>
+  </body>
+</html>
